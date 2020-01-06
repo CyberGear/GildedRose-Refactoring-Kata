@@ -10,8 +10,8 @@ trait TestComons {
     item -> new GildedRose(Array(item))
   }
 
-  def itemAfterOnTwoSteps(name: String, sellIn: Int, quality: Int)
-                         (sellIn1: Int, quality1: Int, sellIn2: Int, quality2: Int): Unit = {
+  def itemAfterOneTwoSteps(name: String, sellIn: Int, quality: Int)
+                          (sellIn1: Int, quality1: Int, sellIn2: Int, quality2: Int): Unit = {
     val (item, gildedRose) = gildedRoseWithItem(name, sellIn, quality)
 
     gildedRose.updateQuality()
