@@ -42,3 +42,10 @@ case class BackstagePassesUpdater() extends QualityUpdater {
     item.quality = quality
   }
 }
+
+case class ConjuredUpdater() extends QualityUpdater {
+  override val pattern: String = "Conjured.*"
+  private val default = DefaultUpdater(2)
+
+  override def updateQuality(item: Item): Unit = default.updateQuality(item)
+}

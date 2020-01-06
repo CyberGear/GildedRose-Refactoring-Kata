@@ -44,4 +44,16 @@ class GildedRoseTest extends FlatSpec with Matchers with TestComons {
     itemAfterOnTwoSteps("Backstage passes to concert", 1, 10)(0, 13, -1, 0)
   }
 
+  it should "degrade Conjured quality and sell in date" in {
+    itemAfterOnTwoSteps("Conjured Testas", 5, 30)(4, 28, 3, 26)
+  }
+
+  it should "degrade Conjured quality twice as fast after sell in date" in {
+    itemAfterOnTwoSteps("Conjured Testas", 1, 30)(0, 28, -1, 24)
+  }
+
+  it should "not decrease Conjured quality below 0" in {
+    itemAfterOnTwoSteps("Conjured Testas", 1, 3)(0, 1, -1, 0)
+  }
+
 }

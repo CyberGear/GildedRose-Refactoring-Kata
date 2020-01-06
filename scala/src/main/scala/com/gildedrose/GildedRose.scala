@@ -5,7 +5,8 @@ class GildedRose(val items: Array[Item]) {
   private val strategies: List[QualityUpdater] = List(
     AgedBrieUpdater(),
     SulfurasUpdater(),
-    BackstagePassesUpdater()
+    BackstagePassesUpdater(),
+    ConjuredUpdater()
   )
 
   def updateQuality(): Unit = items.foreach(updateQuality)
